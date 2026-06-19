@@ -1,96 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<title>Barbearia Cruz</title>
 
-		<link rel="stylesheet" href="reset.css">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<header>
-			<div class="caixa">
-				<h1><img src="sauvage.png"></h1>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="produto.html">Produtos</a></li>
-						<li><a href="contato.html">Contato</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-        <main>
-            <form>
-                <label for="nomesobrenome">Nome e Sobrenome</label>
-                <input type="text" id="nomesobrenome" class="input-padrao" required>
+<head>
+    <meta charset="UTF-8">
+    <title>AURA Perfumaria</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
 
-                <label for="email">E-mail</label>
-                <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="sauvage.png"></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produto.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html" class="botao-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <form id="lpForm">
+            <label for="nomesobrenome">Nome e Sobrenome</label>
+            <input type="text" id="nomesobrenome" class="input-padrao" required>
 
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX)XXXX-XXXX">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
 
-                <label for="mensagem">Mensagem</label>
-                <input cols="70" rows="10" id="mensagem" class="input-padrao" required>
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX)XXXX-XXXX">
 
-                <fieldset>
-                    <legend>Como prefere o nosso contato?</legend>
-                    <label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">Email</label>
-                    <label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone">Telefone</label>
-                    <label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp" id="radio-whatsapp">whatsapp</label>
-                </fieldset>
-                <fieldset>
-                    <legend>Qual horário prefere ser atendido?</legend>
-                    <select>
-                        <option>Manhã</option>
-                        <option>Tarde</option>
-                        <option>Noite</option>
-                    </select>
-                </fieldset>
-                <label><input type="checkbox" class="checkbox" checked="">Gostaria de receber nossas; novidades por o e-mail?</label>
-                <input type="submit" value="Enviar Formulario" class="enviar">
-            </form>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Dias</th>
-                        <th>horários</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Segunda-Feira</td>
-                        <td>8h - 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Terça-Feira</td>
-                        <td>8h - 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Quarta-Feira</td>
-                        <td>8h - 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Quinta-Feira</td>
-                        <td>8h - 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Sexta-Feira</td>
-                        <td>8h - 21h</td>
-                    </tr>
-                    <tr>
-                        <td>Sádado</td>
-                        <td>8h - 12h</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <p>Não atendemos aos domingos e feriados</p>
-        </main>
-        <footer>
-			<img src="aura-logo2.png">
-			<p class="copyright">&copy; Copyright AURA Perfumaria - 2026</p>
-		</footer>
-    </body>
+            <label for="mensagem">Mensagem</label>
+            <input cols="70" rows="10" id="mensagem" class="input-padrao" required>
+
+            <fieldset>
+                <legend>Como prefere o nosso contato?</legend>
+                <label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">Email</label>
+                <label for="radio-telefone"><input type="radio" name="contato" value="telefone"
+                        id="radio-telefone">Telefone</label>
+                <label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp"
+                        id="radio-whatsapp">whatsapp</label>
+            </fieldset>
+            <fieldset>
+                <legend>Qual horário prefere ser atendido?</legend>
+                <select id="turno">
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+            </fieldset>
+            <label><input type="checkbox" id="novidades" class="checkbox" checked="">Gostaria de receber nossas novidades por e-mail?</label>
+            <button type="submit" id="btnSubmit">Enviar Formulario</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dias</th>
+                    <th>horários</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segunda-Feira</td>
+                    <td>8h - 21h</td>
+                </tr>
+                <tr>
+                    <td>Terça-Feira</td>
+                    <td>8h - 21h</td>
+                </tr>
+                <tr>
+                    <td>Quarta-Feira</td>
+                    <td>8h - 21h</td>
+                </tr>
+                <tr>
+                    <td>Quinta-Feira</td>
+                    <td>8h - 21h</td>
+                </tr>
+                <tr>
+                    <td>Sexta-Feira</td>
+                    <td>8h - 22h</td>
+                </tr>
+                <tr>
+                    <td>Sádado</td>
+                    <td>8h - 12h</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <p>Não atendemos aos domingos e feriados</p>
+    </main>
+    <footer>
+        <img src="aura-logo2.png">
+        <p class="copyright">&copy; Copyright AURA Perfumaria - 2026</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        // SUBSTITUA COMPLETA E EXATAMENTE COM AS CREDENCIAIS DO SEU PROJETO SUPABASE
+        // (Você encontra isso em Project Settings > API no painel do Supabase)
+        const SUPABASE_URL = "https://fcgdwvyqyngugztzvutw.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjZ2R3dnlxeW5ndWd6dHp2dXR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NTgxMTIsImV4cCI6MjA5MjAzNDExMn0.yx850TvMgyUql7_rVkRjBD007HOQuWsH4Jw_KQ03NPU";
+
+        // Inicializa o cliente do Supabase
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Captura o formulário e o botão do HTML
+        const form = document.getElementById('lpForm');
+        const btnSubmit = document.getElementById('btnSubmit');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Impede a página de recarregar
+
+            // Desabilita o botão para evitar cliques duplicados durante o envio
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = "Enviando...";
+
+            // Coleta os valores digitados nos inputs
+            const nomeCompleto = document.getElementById('nomesobrenome').value;
+            const emailContato = document.getElementById('email').value;
+            const telefoneContato = document.getElementById('telefone').value;
+            const mensagemContato = document.getElementById('mensagem').value;
+            const contatoSelecionado = document.querySelector('input[name="contato"]:checked');
+            const turnoHorario = document.getElementById('turno').value;
+            const novidadesNotificacao = document.getElementById('novidades').checked ? "Sim" : "Não";
+
+            try {
+                // Insere os dados na tabela do Supabase
+                // IMPORTANTE: Substitua 'nome_da_sua_tabela' pelo nome real da tabela criada no Supabase
+                const { data, error } = await _supabase
+                    .from('contato')
+                    .insert([
+                        {       
+                            nomeo: nomeCompleto,
+                            emailo: emailContato,
+                            telefoneo: telefoneContato,
+                            mensagemo: mensagemContato,
+                            contatoo: contatoSelecionado,
+                            turnoo: turnoHorario,
+                            novidadeso: novidadesNotificacao
+                        }
+                    ]);
+
+                if (error) throw error;
+
+                // Sucesso!
+                alert('Cadastro realizado com sucesso!');
+                form.reset(); // Limpa os campos do formulário
+
+                // Opcional: Se você quiser liberar o download do PDF automaticamente após o cadastro:
+                // window.location.href = "seu-material-gratuito.pdf";
+
+            } catch (err) {
+                console.error("Erro ao salvar no Supabase:", err.message);
+                alert('Ocorreu um erro ao processar seu cadastro. Tente novamente.');
+            } finally {
+                // Reativa o botão após o término da operação
+                btnSubmit.disabled = false;
+                btnSubmit.innerText = "Garantir Meu Acesso";
+            }
+        });
+    </script>
+</body>
 </html>
